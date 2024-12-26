@@ -1,0 +1,57 @@
+# Byte-compiled files
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Virtual environment
+venv/
+
+# VS Code settings
+.vscode/
+
+# Environment variables
+.env
+
+# Log files
+*.log
+*.out
+*.err
+
+# MacOS files
+.DS_Store
+
+# Jupyter Notebook checkpoints (if using notebooks)
+.ipynb_checkpoints/
+
+# TensorFlow saved models
+saved_model/
+*.h5
+
+# Python wheel and distribution files
+*.egg-info/
+dist/
+build/
+
+# Pip-related cache files
+pip-wheel-metadata/
+*.whl
+
+# Temporary files
+*.bak
+*.swp
+*.tmp
+
+# Ignore all files in __pycache__ subdirectories
+**/__pycache__/
+
+# Data files (optional: if you have temporary datasets)
+data/
+*.csv
+*.tsv
+
+# Ignore TensorBoard logs
+logs/
+
+# Ignore checkpoints for TensorFlow models
+checkpoints/
+*.ckpt
