@@ -9,6 +9,8 @@ import numpy
 from tensorflow.keras import layers
 from tensorflow.keras import losses
 
+from fastapi import FastAPI
+
 
 topic_model = tf.saved_model.load("./models/topic_model")
 topic_infer = topic_model.signatures["custom_inference"]
@@ -37,7 +39,14 @@ def predict_sentiment(sentence):
     return SENTIMENT[argmax]
 
 
-if __name__ == "__main__":
-    sentence = "tài liệu thiếu thốn"
-    print("\n\nTopic:", predict_topic(sentence))
-    print("Sentiment:", predict_sentiment(sentence))
+app = FastAPI()
+
+
+@app.get("/predict/topic")
+async def root(sentence: str):
+    return {"topic": predict_topic(sentence)}
+
+
+@app.get("/predict/sentiment")
+async def root(sentence: str):
+    return {"sentiment": predict_sentiment(sentence)}
