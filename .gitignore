@@ -55,3 +55,5 @@ logs/
 # Ignore checkpoints for TensorFlow models
 checkpoints/
 *.ckpt
+
+models/
